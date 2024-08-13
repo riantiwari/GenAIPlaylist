@@ -21,9 +21,10 @@ class llm_response():
     ])
     output_parser = StrOutputParser()
     chain = prompt | llm | output_parser
-    query = "How to learn to make an options pricing model"
+    query = "How to learn to numpy"
     res = chain.invoke({"input":query+"?"})
     lst = parseable_list(res)
 
+    
 # if __name__ == "__main__":
 #     main()
