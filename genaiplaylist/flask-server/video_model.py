@@ -9,20 +9,34 @@ import os #to be able to hide my api key for yt
 yt_api_key = os.environ.get('YT_API_KEY')
 youtube_service = build('youtube','v3',developerKey=yt_api_key)
 
-#All working
+#this method gets searches youtube for the parameter search query and then returns
+#a link to the video with the highest rating most related to that search
+def get_link(search_name):
+    search_request = youtube_service.search().list(
+        q=search_name,  # Replace with your search query
+        part='snippet',
+        maxResults=5,  # Get top 5 results
+        type='video',
+        order='relevance'  # Sort by relevance (or use 'rating' for rating)
+    ).execute()  
 
-#example of the youtube api being used
-request = youtube_service.channels().list(
-    part='statistics', forUsername='schafer5'
-)
+    video_ids = [item['id']['videoId'] for item in search_request['items']]
 
-#executing the api request
-response = request.execute()
-print(response)
+    video_response = youtube_service.videos().list(
+        part='statistics,snippet',
+        id=','.join(video_ids)
+    ).execute()
 
-#idea could be to list the duration of the playlist that we produce (important to the user)
+    best_video = max(video_response['items'], key=lambda x: int(x['statistics'].get('likeCount', 0)))
+    best_video_id = best_video['id']
+    #best_video_title = best_video['snippet']['title']
+    video_link = f"https://www.youtube.com/watch?v={best_video_id}"
+    return video_link
 
-#this is to iterate through the bulleted list of steps we compiled in the llm_model
-for i in llm_response.lst:
-    print(i)
-    print()
+
+class playlist():
+    playlist_links = list()
+    for i in llm_response.lst:
+        playlist_links.append(get_link(i))
+    print(playlist_links)
+

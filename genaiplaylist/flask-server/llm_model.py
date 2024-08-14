@@ -24,7 +24,3 @@ class llm_response():
     query = "How to be able to get an internship at Apple as a computer science undergrad"
     res = chain.invoke({"input":query+"?"})
     lst = parseable_list(res)
-
-    
-# if __name__ == "__main__":
-#     main()
