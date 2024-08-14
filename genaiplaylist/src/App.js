@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+  const [data, setData] = useState([{}])
+
+  useEffect(() => {
+    fetch("/home")
+        .then(res => {
+            console.log("Response:", res); // Log the response to see what you are getting
+            return res.json();
+        })
+        .then(data => {
+            setData(data);
+            console.log(data);
+        })
+        .catch(error => console.error("Error fetching data:", error));
+}, []);
+
+return (
+  <div>
+    {typeof data.home === 'undefined' ? (
+      <p>Loading...</p>
+    ) : (
+      data.home.map((item, i) => (
+        <p key={i}>{item}</p>  // Display the items as expected
+      ))
+    )}
+  </div>
+);
 }
 
-export default App;
+export default App
+

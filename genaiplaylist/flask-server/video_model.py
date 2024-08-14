@@ -2,9 +2,14 @@
 from llm_model import llm_response
 from googleapiclient.discovery import build
 import os #to be able to hide my api key for yt
+from flask import Flask, jsonify
+from flask_cors import CORS
 
 #gets the api_key that I put in the nano /.zshrc file
 #had to do source ~/.zshrc in the vscode terminal as well to make sure this echo'ed properly
+
+app=Flask(__name__)
+CORS(app)
 
 yt_api_key = os.environ.get('YT_API_KEY')
 youtube_service = build('youtube','v3',developerKey=yt_api_key)
@@ -33,10 +38,18 @@ def get_link(search_name):
     video_link = f"https://www.youtube.com/watch?v={best_video_id}"
     return video_link
 
-
-class playlist():
+@app.route("/home", methods=['GET'])
+def playlist():
     playlist_links = list()
-    for i in llm_response.lst:
-        playlist_links.append(get_link(i))
-    print(playlist_links)
+    #comment this stuff out for now because I exceeded my quota limit
+    # for i in llm_response.lst:
+    #     playlist_links.append(get_link(i))
+    playlist_links = [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+    ]
+    return jsonify({"home": playlist_links})
+
+if __name__=="__main__":
+    app.run(debug=True)
 
