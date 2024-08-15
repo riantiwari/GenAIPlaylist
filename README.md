@@ -14,35 +14,31 @@ This project demonstrates the creation of an AI-powered web application that cur
 
 ## Project Structure
 
-GenAIPlaylist/
-│
-├── flask-server/
-│ ├── venv/ # Virtual environment for Python dependencies
-│ ├── llm_model.py # LLM prompt and response handling
-│ └── video_model.py # YouTube API integration and Flask server
-│
-├── node_modules/ # Node.js dependencies for the React app
-│
-├── public/
-│ ├── favicon.ico # Favicon for the React app
-│ ├── index.html # Main HTML file for the React app
-│ ├── logo192.png # Logo files for various resolutions
-│ ├── logo512.png
-│ ├── manifest.json # Web app manifest for React
-│ └── robots.txt # Rules for web crawlers
-│
-├── src/
-│ ├── App.css # CSS styles for the React app
-│ ├── App.js # Main React component to fetch and display video links
-│ ├── index.js # Entry point for the React app
-│ ├── reportWebVitals.js # For measuring performance in the React app
-│ └── setupTests.js # Setup for testing in React
-│
-├── .gitignore # Git ignore file
-├── package-lock.json # Lock file for Node.js dependencies
-├── package.json # Node.js dependencies and scripts
-├── README.md # Project documentation
-├── requirements.txt # Python dependencies for the Flask server
+- **GenAIPlaylist/**
+  - **flask-server/**
+    - `venv/` - Virtual environment for Python dependencies
+    - `llm_model.py` - LLM prompt and response handling
+    - `video_model.py` - YouTube API integration and Flask server
+  - **node_modules/** - Node.js dependencies for the React app
+  - **public/**
+    - `favicon.ico` - Favicon for the React app
+    - `index.html` - Main HTML file for the React app
+    - `logo192.png` - Logo files for various resolutions
+    - `logo512.png`
+    - `manifest.json` - Web app manifest for React
+    - `robots.txt` - Rules for web crawlers
+  - **src/**
+    - `App.css` - CSS styles for the React app
+    - `App.js` - Main React component to fetch and display video links
+    - `index.js` - Entry point for the React app
+    - `reportWebVitals.js` - For measuring performance in the React app
+    - `setupTests.js` - Setup for testing in React
+  - `.gitignore` - Git ignore file
+  - `package-lock.json` - Lock file for Node.js dependencies
+  - `package.json` - Node.js dependencies and scripts
+  - `README.md` - Project documentation
+  - `requirements.txt` - Python dependencies for the Flask server
+
 
 ## Future Enhancements
 
