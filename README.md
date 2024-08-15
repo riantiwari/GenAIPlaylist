@@ -61,4 +61,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out to me at [your.email@example.com](mailto:your.email@example.com).
+If you have any questions or suggestions, feel free to reach out to me at [your.email@example.com](mailto:rtiwari3@terpmail.umd.edu).
