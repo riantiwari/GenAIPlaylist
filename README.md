@@ -14,7 +14,7 @@ This project demonstrates the creation of an AI-powered web application that cur
 
 ## Project Structure
 
-/GenAIPlaylist
+GenAIPlaylist/
 │
 ├── flask-server/
 │ ├── venv/ # Virtual environment for Python dependencies
@@ -43,10 +43,6 @@ This project demonstrates the creation of an AI-powered web application that cur
 ├── package.json # Node.js dependencies and scripts
 ├── README.md # Project documentation
 ├── requirements.txt # Python dependencies for the Flask server
-└── README_template.md # Template for README file
-
-markdown
-Copy code
 
 ## Future Enhancements
 
