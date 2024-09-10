@@ -42,12 +42,12 @@ def get_link(search_name):
 def playlist():
     playlist_links = list()
     #comment this stuff out for now because I exceeded my quota limit
-    # for i in llm_response.lst:
-    #     playlist_links.append(get_link(i))
-    playlist_links = [
-        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
-    ]
+    for i in llm_response.lst:
+        playlist_links.append(get_link(i))
+    # playlist_links = [
+    #     "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    #     "https://www.youtube.com/watch?v=DjYZk8nrXVY"
+    # ]
     return jsonify({"home": playlist_links})
 
 if __name__=="__main__":

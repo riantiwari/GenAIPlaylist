@@ -21,6 +21,6 @@ class llm_response():
     ])
     output_parser = StrOutputParser()
     chain = prompt | llm | output_parser
-    query = "How to be able to get an internship at Apple as a computer science undergrad"
+    query = "How to use a hacksaw squat"
     res = chain.invoke({"input":query+"?"})
     lst = parseable_list(res)
