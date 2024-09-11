@@ -20,7 +20,6 @@ class llm_response():
     output_parser = StrOutputParser()
     chain = prompt | llm | output_parser
 
-    # Now accept a dynamic query
     @classmethod
     def get_response(cls, query):
         res = cls.chain.invoke({"input": query + "?"})
