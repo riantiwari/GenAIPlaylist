@@ -14,7 +14,7 @@ def parseable_list(step_list):
 
 class llm_response():
     llm = Ollama(model="llama2")
-    systm_request = "List key subtopics to learn any skill or topic as single-line bullet points, with each bullet point being a standalone search query suitable for YouTube. Ensure there is no additional text, context, or subtopics. Each bullet should be a concise, clear search term that can be directly copied and pasted into the YouTube search bar, formatted as a single line for easy parsing."
+    systm_request = "List key subtopics to learn any skill or topic as single-line bullet points, with each bullet point being a standalone search query suitable for YouTube. Ensure there is no additional text, context, or subtopics. Each bullet should be a concise, clear search term that can be directly copied and pasted into the YouTube search bar, formatted as a single line for easy parsing. Do this without repeats."
     prompt = ChatPromptTemplate.from_messages([
     ("system", systm_request),
     ("user", "{input}")
