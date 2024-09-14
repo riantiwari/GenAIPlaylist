@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.css'; // Import CSS for styling
 
 function App() {
     const [data, setData] = useState([{}]);
     const [search, setSearch] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false); // State to handle loading
 
     // Function to handle the search button click
     const handleSearch = () => {
