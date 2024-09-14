@@ -11,7 +11,7 @@ function App() {
         if (search.trim() === "") {
             // Don't trigger search for empty input
             return;
-        } 
+        }
         setLoading(true); // Start loading
         fetch(`/home?search=${encodeURIComponent(search)}`)
             .then(res => res.json())
