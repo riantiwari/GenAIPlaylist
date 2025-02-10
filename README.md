@@ -4,6 +4,8 @@
 
 This project demonstrates the creation of an AI-powered web application that curates learning playlists from YouTube. The web app takes a user query about a particular topic, generates a list of key subtopics using a language model, and then fetches the most relevant YouTube videos for each subtopic. This project leverages several technologies including Python, Flask, React, LangChain, and the YouTube Data API.
 
+https://github.com/user-attachments/assets/483c432e-84f8-474f-ba70-184dd5a7e3c7
+
 ## Features
 
 - **AI-Powered Subtopic Generation**: The application uses the Ollama language model to generate key subtopics related to a user query, each of which is a search-friendly phrase.
